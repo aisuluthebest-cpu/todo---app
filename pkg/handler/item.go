@@ -77,6 +77,10 @@ func (h *Handler) getItemById(c *gin.Context) {
 		newErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
+	if item == nil {
+		newErrorResponse(c, http.StatusNotFound, "item not found")
+		return
+	}
 
 	c.JSON(http.StatusOK, item)
 }
