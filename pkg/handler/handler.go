@@ -11,7 +11,7 @@ import (
 )
 
 type Handler struct {
-	services *service.Service
+	services *service.ResultHandler
 }
 
 func NewHandler(services *service.Service) *Handler {
